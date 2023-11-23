@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Signup() {
 
-    const dispatch = useDispatch ();
-    const user =useSelector((state) => state.user.value);
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user.value);
 
     const [signUpUsername, setSignUpUsername] = useState('');
 	const [signUpPassword, setSignUpPassword] = useState('');
@@ -31,11 +31,11 @@ function Signup() {
 	};
 
     return (
-        <div>
+        
             <button className={styles.signUpButton}>
             Sign Up
             </button>
-        </div>
+        
     )
 
 }

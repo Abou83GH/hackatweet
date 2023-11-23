@@ -3,6 +3,8 @@ import { useState } from "react";
 import Head from "next/head";
 import { Modal, Button } from "antd";
 import styles from "../styles/Login.module.css";
+import Signin from "./Signin";
+import Signup from "./Signup";
 
 function Login() {
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
@@ -55,13 +57,14 @@ function Login() {
               onOk={handleSignUpBtn}
               onCancel={handleSUCancel}
             >
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
+              <input placeholder='firstname'></input>
+              <input placeholder='username'></input>
+              <input placeholder='password'></input>
+              <Signup />
             </Modal>
             <p className={styles.paragraph}>Already have an account</p>
             <Button className={styles.component} onClick={showSignInModal}>
-              Sign in
+            Sign in
             </Button>
             <Modal
               title="Basic Modal"
@@ -69,9 +72,9 @@ function Login() {
               onOk={handleSignInBtn}
               onCancel={handleSICancel}
             >
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
+              <input placeholder='username'></input>
+              <input placeholder='password'></input>
+              <Signin />
             </Modal>
           </div>
         </div>
