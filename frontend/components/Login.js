@@ -3,7 +3,9 @@ import Head from "next/head";
 import { Modal } from "antd";
 import styles from "../styles/Login.module.css";
 
-function Login() {
+function Login(
+    // const [isModalVisible, setIsModalVisible] = useState(false);
+) {
   return (
     <div className={styles.loginContainer}>
       <div className={styles.container}>
@@ -14,16 +16,19 @@ function Login() {
         </div>
         <div className={styles.rightsection}>
           <img src="logo.png" alt="Logo petit" />
-          <h1>Titre Principal</h1>
-          <h2>Sous-titre</h2>
+          <h1>See what's happening</h1>
+          <h2>Join Hackatweet today</h2>
           <div className={styles.content}>
-            <div className={styles.component}>-- Votre composant ici --</div>
-            <p className={styles.paragraph}>Votre paragraphe ici.</p>
-            <div className={styles.component}>-- Autre composant ici --</div>
+            <button className={styles.component}>Sign Up</button>
+            <p className={styles.paragraph}>Already have an account?</p>
+            <button className={styles.component}>Sign In</button>
           </div>
         </div>
        
       </div>
+        {/* <Modal getContainer="#react-modals" className={styles.modal} visible={isModalVisible} closable={false} footer={null}>
+					{modalContent}
+	    </Modal> */}
     </div>
   );
 }
