@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-require('../models/connection');
+require('./models/connection');
 
 const cors = require('cors');
 app.use(cors());
