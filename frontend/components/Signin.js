@@ -4,8 +4,6 @@ import { Modal } from "antd";
 import styles from "../styles/Login.module.css";
 
 function Signin() {
-  return (
-    
-  );
+
 }
 export default Signin;
