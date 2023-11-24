@@ -1,15 +1,22 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import Head from "next/head";
 import { Modal, Button } from "antd";
 import styles from "../styles/Login.module.css";
 import Signin from "./Signin";
 import Signup from "./Signup";
+import { useRouter } from 'next/router';
+import { logout } from "../reducers/user";
 
 
 function Login() {
+  // let user = useSelector((state) => state.user.value);
+  const user = {token: null}
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
+
 
   const showSignInModal = () => {
     setIsSignInModalOpen(true);
@@ -19,14 +26,6 @@ function Login() {
     setIsSignUpModalOpen(true);
   };
 
-  const handleSignUpBtn = () => {
-    setIsSignUpModalOpen(false);
-  };
-
-  const handleSignInBtn = () => {
-    setIsSignInModalOpen(false);
-  };
-
   const handleSUCancel = () => {
     setIsSignUpModalOpen(false);
   };
@@ -34,8 +33,11 @@ function Login() {
   const handleSICancel = () => {
     setIsSignInModalOpen(false);
   };
-  
 
+  if (user.token) {
+    router.push('/home');
+  }
+  
   return (
     <div className={styles.loginContainer}>
       <div className={styles.container}>
@@ -55,13 +57,9 @@ function Login() {
             <Modal
               title="Basic Modal"
               open={isSignUpModalOpen}
-              onOk={handleSignUpBtn}
               onCancel={handleSUCancel}
               className={styles.modalSignUp}
             >
-              <input placeholder='firstname'></input>
-              <input placeholder='username'></input>
-              <input placeholder='password'></input>
               <Signup />
             </Modal>
             <p className={styles.paragraph}>Already have an account</p>
@@ -71,11 +69,8 @@ function Login() {
             <Modal
               title="Basic Modal"
               open={isSignInModalOpen}
-              onOk={handleSignInBtn}
               onCancel={handleSICancel}
             >
-              <input placeholder='username'></input>
-              <input placeholder='password'></input>
               <Signin />
             </Modal>
           </div>
