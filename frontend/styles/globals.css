@@ -9,3 +9,14 @@ body {
   box-sizing: border-box;
 }
 
+.ant-modal {
+  position: relative;
+  top:200px;
+  height: 100px;
+ 
+}
+.ant-modal .ant-modal-content{
+  background-color: #151F2B;
+  height: 350px;
+  width: 400px;
+}

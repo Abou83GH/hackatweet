@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { Modal, Button } from "antd";
 import styles from "../styles/Login.module.css";
+import 'antd/dist/reset.css';
 import Signin from "./Signin";
 import Signup from "./Signup";
 import { useRouter } from 'next/router';
@@ -64,10 +65,9 @@ function Login() {
             </Modal>
             <p className={styles.paragraph}>Already have an account</p>
             <Button className={styles.signInBtn} onClick={showSignInModal}>
-            Sign in
+              Sign in
             </Button>
             <Modal
-              title="Basic Modal"
               open={isSignInModalOpen}
               onCancel={handleSICancel}
             >
@@ -76,6 +76,25 @@ function Login() {
           </div>
         </div>
       </div>
+      <Modal
+              open={isSignUpModalOpen}
+              onOk={handleSignUpBtn}
+              onCancel={handleSUCancel}
+              className="modalSignUp"
+             
+            >
+              <div className={styles.signupContent}>
+              <img src="logo.png" alt="Logo petit" style={{ width: '10%', height: '10%', rotate:("180deg")}}/>
+              <span className={styles.modalSlogan}>Create your hackatweet account</span>
+              <div className={styles.signupInput}>
+              <input className ={styles.input} placeholder="firstname"></input>
+              <input className ={styles.input} placeholder="username"></input>
+              <input className ={styles.input} placeholder="password"></input>
+              </div>
+              </div>
+
+              <Signup />
+            </Modal>
     </div>
   );
 }
