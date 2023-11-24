@@ -3,6 +3,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { Modal, Button } from "antd";
 import styles from "../styles/Login.module.css";
+import 'antd/dist/reset.css';
 import Signin from "./Signin";
 import Signup from "./Signup";
 
@@ -34,7 +35,6 @@ function Login() {
   const handleSICancel = () => {
     setIsSignInModalOpen(false);
   };
-  
 
   return (
     <div className={styles.loginContainer}>
@@ -52,35 +52,50 @@ function Login() {
             <Button className={styles.signUpBtn} onClick={showSignUpModal}>
               Sign up
             </Button>
-            <Modal
-              title="Basic Modal"
-              open={isSignUpModalOpen}
-              onOk={handleSignUpBtn}
-              onCancel={handleSUCancel}
-              className={styles.modalSignUp}
-            >
-              <input placeholder='firstname'></input>
-              <input placeholder='username'></input>
-              <input placeholder='password'></input>
-              <Signup />
-            </Modal>
+            
             <p className={styles.paragraph}>Already have an account</p>
             <Button className={styles.signInBtn} onClick={showSignInModal}>
-            Sign in
+              Sign in
             </Button>
             <Modal
-              title="Basic Modal"
               open={isSignInModalOpen}
               onOk={handleSignInBtn}
               onCancel={handleSICancel}
             >
-              <input placeholder='username'></input>
-              <input placeholder='password'></input>
+              
+              <div className={styles.signinContent}>
+              <img src="logo.png" alt="Logo petit" style={{ width: '10%', height: '10%', rotate:("180deg")}}/>
+              <span className={styles.modalSlogan}>Connect to Hackatweet</span>
+              <div className={styles.signinInput}>
+              <input className ={styles.input} placeholder="username"></input>
+              <input className ={styles.input} placeholder="password"></input>
+              </div>
+              </div>
+
               <Signin />
             </Modal>
           </div>
         </div>
       </div>
+      <Modal
+              open={isSignUpModalOpen}
+              onOk={handleSignUpBtn}
+              onCancel={handleSUCancel}
+              className="modalSignUp"
+             
+            >
+              <div className={styles.signupContent}>
+              <img src="logo.png" alt="Logo petit" style={{ width: '10%', height: '10%', rotate:("180deg")}}/>
+              <span className={styles.modalSlogan}>Create your hackatweet account</span>
+              <div className={styles.signupInput}>
+              <input className ={styles.input} placeholder="firstname"></input>
+              <input className ={styles.input} placeholder="username"></input>
+              <input className ={styles.input} placeholder="password"></input>
+              </div>
+              </div>
+
+              <Signup />
+            </Modal>
     </div>
   );
 }

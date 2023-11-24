@@ -26,28 +26,33 @@
   .rightsection img {
     width: 50px; 
     height: auto;
-    margin-bottom: 100px;
-    padding-left: 10px;
+    margin-bottom:300px;
+    margin-left: -50px;
+    transform: rotate(180deg);
   }
   
   .rightsection h1 {
     font-family: 'Mont-Heavy', sans-serif;
     color: white;
     font-size: 65px;
-    margin-bottom: 200px;
+    margin-left: -50px;
+    margin-right: 50px;
   }
   
   .rightsection h2 {
     font-family: 'Mont-Heavy', sans-serif;
     color: white;
     font-size: 30px;
+    margin-left: -50px;
   }
 
   .paragraph {
     font-family: 'Mont-Heavy', sans-serif;
     color: white;
     font-size: 15px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+
+    
   }
   
   .leftsection {
@@ -55,39 +60,95 @@
     height: 100%;
     background-image: url('../public/landingBG.png');
     background-size: cover;
-    background-position: center;
+    background-position: 3000px;
     position: relative;
   }
   
   .logobig {
-    position: absolute;
+    margin-top: 280px;
+    margin-right: 120px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transform: rotate(180deg);
   }
   
   .logobig img {
-    width: 200px; 
+    width: 500px; 
     height: auto;
   }
 
   .signUpBtn {
+    margin-left: -2px;
     text-align: center;
     font-family:Verdana;
     color: white;
     background-color: #5094D0;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bolder;
+    border: transparent;
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
   }
 
   .signInBtn {
+  
+    margin-left: -2px;
     text-align: center;
     font-family:Verdana;
     color: #4687C7;
     background-color: #151F2B;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bolder;
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+
   }
+
+  .content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: -50px;
+  }
+
+  .signupContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .signinContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .modalSlogan{
+    font-family: 'Mont-Heavy', sans-serif;
+    color: white;
+    font-size: 15px;
+    margin-top: 20px;
+
+  }
+
+  .signupInput{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    row-gap: 20px;
+  }
+
+  .input{
+    background-color: #151F2B;
+    border-radius: 20px;
+    color: white;
+  }
+
+
 
 
 
