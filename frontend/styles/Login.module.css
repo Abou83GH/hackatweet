@@ -1,3 +1,9 @@
+
+@font-face {
+    font-family: 'Mont-Heavy';
+    src: url('../public/fonts/Mont-Heavy.otf') format('opentype');
+  }
+
 .loginContainer {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,39 +11,42 @@
   
   .container {
     display: flex;
-    background-color: black;
+    background-color: #151F2B;
     justify-content: space-between;
     align-items: center;
     height: 100vh;
   }
   
   .rightsection {
-
+    flex-wrap: nowrap;
     flex: 1;
-    padding: 20px;
+    padding: 100px;
   }
   
   .rightsection img {
-    width: 50px; /* Taille du logo petit */
+    width: 50px; 
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
+    padding-left: 10px;
   }
   
   .rightsection h1 {
+    font-family: 'Mont-Heavy', sans-serif;
     color: white;
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 65px;
+    margin-bottom: 200px;
   }
   
   .rightsection h2 {
+    font-family: 'Mont-Heavy', sans-serif;
     color: white;
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 30px;
   }
 
   .paragraph {
+    font-family: 'Mont-Heavy', sans-serif;
     color: white;
-    font-size: 22px;
+    font-size: 15px;
     margin-bottom: 20px;
   }
   
@@ -58,14 +67,28 @@
   }
   
   .logobig img {
-    width: 200px; /* Taille du logo gros */
+    width: 200px; 
     height: auto;
   }
 
-  .component {
+  .signUpBtn {
+    text-align: center;
+    font-family:Verdana;
     color: white;
-    background-color: blue;
+    background-color: #5094D0;
     font-size: 22px;
-    margin-bottom: 20px;
-
+    font-weight: bolder;
   }
+
+  .signInBtn {
+    text-align: center;
+    font-family:Verdana;
+    color: #4687C7;
+    background-color: #151F2B;
+    font-size: 22px;
+    font-weight: bolder;
+  }
+
+
+
+ 
