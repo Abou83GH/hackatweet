@@ -76,25 +76,6 @@ function Login() {
           </div>
         </div>
       </div>
-      <Modal
-              open={isSignUpModalOpen}
-              onOk={handleSignUpBtn}
-              onCancel={handleSUCancel}
-              className="modalSignUp"
-             
-            >
-              <div className={styles.signupContent}>
-              <img src="logo.png" alt="Logo petit" style={{ width: '10%', height: '10%', rotate:("180deg")}}/>
-              <span className={styles.modalSlogan}>Create your hackatweet account</span>
-              <div className={styles.signupInput}>
-              <input className ={styles.input} placeholder="firstname"></input>
-              <input className ={styles.input} placeholder="username"></input>
-              <input className ={styles.input} placeholder="password"></input>
-              </div>
-              </div>
-
-              <Signup />
-            </Modal>
     </div>
   );
 }
