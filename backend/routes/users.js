@@ -6,6 +6,13 @@ const { checkBody } = require('../modules/checkBody');
 const uid2 = require('uid2');
 const bcrypt = require('bcrypt');
 
+/* GET ALL USERS */
+router.get("/all", (req, res) => {
+  User.find().then(data => {
+    res.json({ result: data, message: 'List of all current users'})
+  })
+})
+
 /* POST SIGN UP */
 router.post("/signup", (req, res) => {
   // Check if there are empty fields before proceeding with the next checkpoints
